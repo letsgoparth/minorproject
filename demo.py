@@ -7,6 +7,13 @@ data_list = [
     ['Bob', 35, 'Manager'],
 ]
 
+result = list(zip(a, b, c))
+
+# Print the result
+for row in result:
+    print(row)
+
+
 # Specify the CSV file path
 csv_file_path = 'file.csv'  # Replace this with your desired file path
 

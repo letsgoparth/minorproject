@@ -49,9 +49,14 @@ def get_language(file_content):
 
 def get_positionTitle(file_content):
     pattern = r'"title":"(.*?)"'
-
+    new_match = []
+    
     matches = re.findall(pattern, file_content)
-    return matches
+    for match in matches:
+        nm = match.split(" - ")
+        # print(nm[-2])
+        new_match.append(nm[-2])
+    return new_match
 
 def get_experience(file_content):
     pattern = r'\((\d+-\d+) yrs\)'
@@ -61,16 +66,33 @@ def get_experience(file_content):
 def get_allMandatorySkills(file_content):
     pattern = r'"title":"(.*?)".*?"mandatoryTags":\[(.*?)\]'
     
+    skill_list = []
+    
     matches = re.findall(pattern, file_content, re.DOTALL)
-    return matches
+    for name in matches:
+        mandatory_tags_part = name[1]
+        skills = re.findall(r'"name":"(.*?)"', mandatory_tags_part)
+        skill_list.append(skills)
+    
+    return skill_list
     
 def get_Date(file_content):
     pattern = r'"createdTimeMs":(\d+)'
     timestamps = re.findall(pattern, file_content)
     matches = timestamps
+    
+    final_date = []
     # matches = [datetime.utcfromtimestamp(int(ts) / 1000.0) for ts in timestamps]
-    return matches    
-
+    for timestamp in matches:
+        full_date = datetime.utcfromtimestamp(int(timestamp) / 1000.0)
+        date = full_date.date()
+        formatted_date = date.strftime("%d-%m-%Y")
+        # print(formatted_date)
+        final_date.append(formatted_date)
+        
+    return final_date
+          
+    
 #-------------------------------------------------------------------------------------------
 
 url = "https://www.hirist.com/search/python-p1.html?locIds=0&exp=0"
@@ -84,29 +106,62 @@ with open(file_path, 'r') as file:
 # if page_source:
 #     save_to_file(page_source, file_path)
 
-for name in get_companyName(page_source):
-    print(name)
 
-for name in get_positionTitle(page_source):
-    print(name)
+# print(get_companyName(page_source))
+# print('\n')
+# print(get_positionTitle(page_source))
+# print('\n')
+# print(get_language(page_source))
+# print('\n')
+# print(get_Location(page_source))
+# print('\n')
+# print(get_experience(page_source))
+# print('\n')
+# print(get_allMandatorySkills(page_source))
+# print('\n')
+# print(get_Date(page_source))
+# print('\n')
+
+main_list = list(zip(
+    get_companyName(page_source),
+    get_positionTitle(page_source),
+    get_language(page_source),
+    get_Location(page_source),
+    get_experience(page_source),
+    get_allMandatorySkills(page_source),
+    get_Date(page_source)
+    ))
+
+for row in main_list:
+    print(row)
+    print('\n')
+
+
+
+
+# for name in get_companyName(page_source):
+#     print(name)
+
+# for name in get_positionTitle(page_source):
+#     print(name)
  
-for name in get_language(page_source):
-    print(name) 
+# for name in get_language(page_source):
+#     print(name) 
  
-for name in get_Location(page_source):
-    print(name)
+# for name in get_Location(page_source):
+#     print(name)
 
-for name in get_experience(page_source):
-    print(name)
+# for name in get_experience(page_source):
+#     print(name)
 
-for name in get_allMandatorySkills(page_source):
-    mandatory_tags_part = name[1]
+# for name in get_allMandatorySkills(page_source):
+#     print(name)
 
-    skills = re.findall(r'"name":"(.*?)"', mandatory_tags_part)
-    print(skills)
+# for timestamp in get_Date(page_source):
+#     full_date = datetime.utcfromtimestamp(int(timestamp) / 1000.0)
+#     date = full_date.date()
+#     formatted_date = date.strftime("%d-%m-%Y")
+#     print(formatted_date)
 
-for timestamp in get_Date(page_source):
-    full_date = datetime.utcfromtimestamp(int(timestamp) / 1000.0)
-    date = full_date.date()
-    formatted_date = date.strftime("%d-%m-%Y")
-    print(formatted_date)
+
+
