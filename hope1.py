@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from datetime import datetime
+import csv
 
 def get_page_source(url):
     try:
@@ -53,9 +54,13 @@ def get_positionTitle(file_content):
     
     matches = re.findall(pattern, file_content)
     for match in matches:
+        print(match)
         nm = match.split(" - ")
-        # print(nm[-2])
-        new_match.append(nm[-2])
+        if len(nm)>1:
+            # print(nm[-2])
+            new_match.append(nm[-2])
+        else:
+            new_match.append("null")
     return new_match
 
 def get_experience(file_content):
@@ -91,21 +96,27 @@ def get_Date(file_content):
         final_date.append(formatted_date)
         
     return final_date
-          
+
+def write_CSV(list,csv_path):
+    with open(csv_path, 'w', newline='') as csv_file:
+        csv_writer = csv.writer(csv_file)
+    
+        for row in list:
+            csv_writer.writerow(row)
+    print("Data has been written to"+str(csv_path))
     
 #-------------------------------------------------------------------------------------------
 
-url = "https://www.hirist.com/search/python-p1.html?locIds=0&exp=0"
+url = "https://www.hirist.com/search/react.html?locIds=0&exp=0&ref=homepage"
 file_path = "page_source.txt"
 
-# page_source=get_page_source(url)
+page_source=get_page_source(url)
 
-with open(file_path, 'r') as file:
-    page_source = file.read()
+# with open(file_path, 'r') as file:
+#     page_source = file.read()
     
-# if page_source:
-#     save_to_file(page_source, file_path)
-
+if page_source:
+    save_to_file(page_source, file_path)
 
 # print(get_companyName(page_source))
 # print('\n')
@@ -132,9 +143,11 @@ main_list = list(zip(
     get_Date(page_source)
     ))
 
-for row in main_list:
-    print(row)
-    print('\n')
+# for row in main_list:
+#     print(row)
+#     print('\n')
+    
+write_CSV(main_list,"file.csv")
 
 
 
@@ -157,11 +170,6 @@ for row in main_list:
 # for name in get_allMandatorySkills(page_source):
 #     print(name)
 
-# for timestamp in get_Date(page_source):
-#     full_date = datetime.utcfromtimestamp(int(timestamp) / 1000.0)
-#     date = full_date.date()
-#     formatted_date = date.strftime("%d-%m-%Y")
-#     print(formatted_date)
 
 
 
