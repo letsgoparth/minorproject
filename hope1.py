@@ -98,9 +98,11 @@ def get_Date(file_content):
     return final_date
 
 def write_CSV(list,csv_path):
+    header_row = ["Comapay","Position", "Primary Skill", "Location", "Experience","Other Skills","Date"]
     with open(csv_path, 'w', newline='') as csv_file:
         csv_writer = csv.writer(csv_file)
-    
+        csv_writer.writerow(header_row)
+
         for row in list:
             csv_writer.writerow(row)
     print("Data has been written to"+str(csv_path))
