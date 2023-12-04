@@ -1,7 +1,4 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h1> HEllo</h1>  
+<h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align:center; background-color:azure"> Results for {{result}}</h1>  
 
 {% comment %} <span>  
     {{ chart|safe }}
@@ -11,20 +8,15 @@
     {{ chart2|safe }}
 </span> {% endcomment %}
 
-<div style="background-color: blue; width: 100%; height: 650px;">  
+<div style="width: 100%; height: 650px;">  
   
-    <div style="background-color: red; width: 50%; height: 550px; float:left;">  
-This is the first division to have a vertical alignment.  
+    <div style="width: 50%; height: 550px; float:left;">  
     {{ chart|safe }}    
     </div>  
 
-    <div style="background-color: yellow; width:50%; height: 550px; float:left;">  
-This is the second division to have a vertical alignment.  
+    <div style="width:50%; height: 550px; float:left;">  
+ 
     {{ chart2|safe }}
     </div>  
-</div>  
-
-{% endblock content %}
-
-
+</div> 
 
