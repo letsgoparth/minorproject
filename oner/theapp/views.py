@@ -10,7 +10,6 @@ from collections import Counter
 import folium
 import os
 
-
 def get_page_source(url):
     try:
         response = requests.get(url)
@@ -150,8 +149,6 @@ def home(request):
     return render(request, 'base.html')
 
 
-
-
 def add(request):
     #Getting the variable
     a = request.GET['n1']
@@ -173,11 +170,8 @@ def add(request):
             except Exception as e:
                 print(f"Error saving to file: {e}")
     
-    with open("pagesource.txt", 'r') as file:
+    with open("pagesource.txt", 'r', encoding="utf8") as file:
         page_source = file.read()
-    
-    
-        
     
 
     # url = "https://www.hirist.com/search/"+str(a)+".html"
