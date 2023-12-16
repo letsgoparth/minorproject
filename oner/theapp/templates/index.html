@@ -1,10 +1,88 @@
 <html>
 <head>
-    <title>Addition of Two Number</title>
+    {% load static %}
+
+    <link  rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
 </head>
-<body bgcolor="cyan">
+
+
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark" style="background-color: #122952">
+    <a class="navbar-brand" href="home">Job Market Analysis Tool</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="home">
+            <i class="fa fa-home"></i>
+            Home
+            <span class="sr-only">(current)</span>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about">
+            <i class="fa fa-info-circle">
+              <span class="badge badge-danger"></span>
+            </i>
+            About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="instructions">
+            <i class="fa fa-envelope-o">
+              <span class="badge badge-danger"></span>
+            </i>
+            Instructions
+          </a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-envelope-o">
+              <span class="badge badge-primary"></span>
+            </i>
+            Frequent Searches
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li> -->
+      </ul>
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.hirist.com/">
+              <i class="fa fa-globe">
+                <span class="badge badge-success"></span>
+              </i>
+              hirist.com
+            </a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="developers">
+            <i class="fa fa-desktop">
+              <span class="badge badge-info"></span>
+            </i>
+            Developer
+          </a>
+        </li>
+        
+      </ul>
+      <!-- <form class="form-inline my-2 my-lg-0"  action="add">
+  
+        <input type="text" class="search-bar" placeholder="Enter your search term">
+        <button class="search-button">Search</button>
+      </form> -->
+    </div>
+  </nav>
+<body>
     {% block content %}
     {% endblock %}
-    <!-- Result : {{result}} -->
 </body>
 </html>

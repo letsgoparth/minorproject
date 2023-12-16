@@ -1,5 +1,82 @@
-<form action="add">
-    Search : <input type="text" name="n1"><br>
-    <!-- Enter 2nd number : <input type="text" name="n2"><br> -->
-    <input type="submit">
-</form>
+{% extends 'index.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Search Bar with Image</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://images.hdqwalls.com/wallpapers/rejection-journey-4k-q1.jpg'); /* Replace 'your-image.jpg' with the path to your image file */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            height: 100vh; /* Set the body height to 100% of the viewport height */
+            margin: 0; /* Remove default margin */
+        }
+
+        body {
+            margin: 0;
+            background-color: #684444e0;
+        }
+
+        .search-container {
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            max-width: 340px; /* Adjust the size as needed */
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #122952;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .search-button {
+            background-color: #ff2175;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="search-container">
+        <form action="add">
+            <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="n1">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+        
+        <img src="https://svgshare.com/i/10tP.svg" alt="Logo" class="logo"> <!-- Replace 'your-logo.png' with your image file -->
+        <br>
+        <input type="text" class="search-bar" placeholder="Enter your search term" name = "n1">
+
+        <button class="search-button"  type = "submit">Search</button>
+    </form>
+        <!-- <a href='https://svgshare.com/s/10t3' ><img src='https://svgshare.com/i/10t3.svg' title='' /></a> -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+{% endblock %} 

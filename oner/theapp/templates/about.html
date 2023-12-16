@@ -1,0 +1,211 @@
+<head>
+  {% load static %}
+
+  <link  rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+
+<style>
+  .search-bar {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #122952;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-button {
+    background-color: #ff2175;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark" style="background-color: #122952">
+  <a class="navbar-brand" href="home">Job Market Analysis Tool</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="home">
+          <i class="fa fa-home"></i>
+          Home
+          <span class="sr-only">(current)</span>
+          </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="about">
+          <i class="fa fa-info-circle">
+            <span class="badge badge-danger"></span>
+          </i>
+          About
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="instructions">
+          <i class="fa fa-envelope-o">
+            <span class="badge badge-danger"></span>
+          </i>
+          Instructions
+        </a>
+      </li>
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-envelope-o">
+            <span class="badge badge-primary"></span>
+          </i>
+          Frequent Searches
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+    </ul>
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+          <a class="nav-link" href="https://www.hirist.com/">
+            <i class="fa fa-globe">
+              <span class="badge badge-success"></span>
+            </i>
+            hirist.com
+          </a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="developers">
+          <i class="fa fa-desktop">
+            <span class="badge badge-info"></span>
+          </i>
+          Developer
+        </a>
+      </li>
+      
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0"  action="add">
+
+      <input type="text" class="search-bar" placeholder="Enter your search term">
+      <button class="search-button">Search</button>
+    </form> -->
+  </div>
+</nav>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About the Project</h1>
+    </header>
+
+    <section>
+        <h2>Overview</h2>
+        <p>
+            The "Job Market Analysis Tool" is an innovative web application designed to empower individuals and organizations
+            with valuable insights into the dynamic job market. Whether you are a job seeker exploring career opportunities
+            or an employer seeking to understand market trends, this tool provides a comprehensive solution.
+        </p>
+    </section>
+
+    <section>
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Data Accuracy and Relevance:</strong> The tool ensures the accuracy and relevance of information by scraping
+                data from various job platforms and processing it to provide up-to-date insights.</li>
+            <li><strong>Interactive Visualizations:</strong> Dynamic charts and graphs allow users to explore and analyze job market trends
+                in an engaging and interactive manner.</li>
+            <li><strong>User-Friendly Interface:</strong> The intuitive interface is designed for easy navigation, ensuring that users
+                can access valuable information effortlessly.</li>
+            <li><strong>Agile Development Practices:</strong> The project embraced agile methodologies, fostering adaptability, responsiveness,
+                and continuous improvement throughout the development lifecycle.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Future Scope</h2>
+        <p>
+            While the "Job Market Analysis Tool" has achieved its primary objectives, the journey doesn't end here. There are exciting
+            possibilities for future enhancements and expansions to ensure the tool remains a valuable resource:
+        </p>
+        <ul>
+            <li><strong>Enhanced Data Sources:</strong> Expand the tool's capability to extract data from a wider range of job platforms,
+                providing users with an even more comprehensive view of the job market.</li>
+            <li><strong>Advanced Analytics Features:</strong> Integrate advanced analytics features, such as predictive modeling, sentiment
+                analysis, and skill forecasting, offering deeper insights for users.</li>
+            <li><strong>Customization and Personalization:</strong> Implement features that allow users to customize their dashboard, set preferences,
+                and receive personalized recommendations based on their career goals.</li>
+            <li><strong>Integration with Learning Platforms:</strong> Collaborate with online learning platforms to integrate educational
+                recommendations based on emerging job trends and required skill sets.</li>
+            <li><strong>Mobile Application Development:</strong> Develop a mobile application version of the tool to cater to users who prefer
+                accessing job market insights on their mobile devices.</li>
+            <li><strong>Collaboration with Industry Partners:</strong> Establish collaborations with industry partners, recruitment agencies, and
+                educational institutions to enrich the tool's dataset and provide additional value to users.</li>
+        </ul>
+    </section>
+
+    <footer>
+        &copy; 2023 Job Market Analysis Tool
+    </footer>
+
+</body>
+</html>

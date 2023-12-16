@@ -24,19 +24,6 @@
       border-radius: 5px;
       cursor: pointer;
   }
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-
-    header {
-        background-color: #e8ecf4;
-        color: #636efa;
-        padding: 10px;
-        text-align: center;
-    }
   
   </style>
   <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark" style="background-color: #122952">
@@ -70,14 +57,6 @@
             Instructions
           </a>
         </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="instructions">
-              <i class="fa fa-line-chart">
-                <span class="badge badge-danger"></span>
-              </i>
-              Insights
-            </a>
-          </li>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-envelope-o">
@@ -102,7 +81,7 @@
               hirist.com
             </a>
           </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="developers">
             <i class="fa fa-desktop">
               <span class="badge badge-info"></span>
@@ -119,28 +98,89 @@
       </form> -->
     </div>
   </nav>
-
-<header>
-    <h1> Results for {{ result }}</h1>
-</header>
-
-{% comment %} <span>  
-    {{ chart|safe }}
-</span>
-
-</span>  
-    {{ chart2|safe }}
-</span> {% endcomment %}
-
-<div style="width: 100%; height: 650px;">  
   
-    <div style="width: 50%; height: 550px; float:left;">  
-    {{ chart|safe }}    
-    </div>  
 
-    <div style="width:50%; height: 550px; float:left;">  
- 
-    {{ chart2|safe }}
-    </div>  
-</div> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Developers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About the Developers</h1>
+    </header>
+
+    <section>
+        <h2>Parth Verma</h2>
+        <p>
+            Parth is a dedicated BCA student who played a key role in the development of this project. With a passion for programming and problem-solving, he contributed his skills to create a robust and efficient system.
+        </p>
+
+        <h2>Anmol Sahni</h2>
+        <p>
+            Anmol is an enthusiastic BCA student who collaborated with Parth to bring this project to life. His strong analytical skills and creativity added valuable insights to the project, ensuring a user-friendly experience.
+        </p>
+
+        <h2>Project Details</h2>
+        <ul>
+            <li><strong>Project Name:</strong> Job Market Analysis Tool</li>
+            <li><strong>Development Period:</strong> 5th Semester BCA Minor Project</li>
+        </ul>
+    </section>
+
+    <footer>
+        &copy; 2023 Job Market Analysis Tool
+    </footer>
+
+</body>
+</html>

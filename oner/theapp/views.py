@@ -148,6 +148,14 @@ def home(request):
     
     return render(request, 'base.html')
 
+def about(request):
+    return render(request,'about.html')
+
+def inst(request):
+    return render(request,'instructions.html')
+
+def dev(request):
+    return render(request,'dev.html')
 
 def add(request):
     #Getting the variable

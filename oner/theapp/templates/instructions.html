@@ -24,19 +24,6 @@
       border-radius: 5px;
       cursor: pointer;
   }
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-
-    header {
-        background-color: #e8ecf4;
-        color: #636efa;
-        padding: 10px;
-        text-align: center;
-    }
   
   </style>
   <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark" style="background-color: #122952">
@@ -62,7 +49,7 @@
             About
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="instructions">
             <i class="fa fa-envelope-o">
               <span class="badge badge-danger"></span>
@@ -70,14 +57,6 @@
             Instructions
           </a>
         </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="instructions">
-              <i class="fa fa-line-chart">
-                <span class="badge badge-danger"></span>
-              </i>
-              Insights
-            </a>
-          </li>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-envelope-o">
@@ -119,28 +98,113 @@
       </form> -->
     </div>
   </nav>
-
-<header>
-    <h1> Results for {{ result }}</h1>
-</header>
-
-{% comment %} <span>  
-    {{ chart|safe }}
-</span>
-
-</span>  
-    {{ chart2|safe }}
-</span> {% endcomment %}
-
-<div style="width: 100%; height: 650px;">  
   
-    <div style="width: 50%; height: 550px; float:left;">  
-    {{ chart|safe }}    
-    </div>  
 
-    <div style="width:50%; height: 550px; float:left;">  
- 
-    {{ chart2|safe }}
-    </div>  
-</div> 
+<!DOCTYPE html>
+<html lang="en">
 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 15px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Instructions</h1>
+    </header>
+
+    <section>
+        <h2>Welcome to the Job Market Analysis Tool!</h2>
+        <p>
+            This tool is designed to provide you with valuable insights into the job market. Here's a guide on how to use its features and what to expect:
+        </p>
+
+        <h3>1. Search for Job Insights</h3>
+        <p>
+            Start by entering a job title or keyword in the search bar and click the "Search" button. The tool will scrape relevant data from job platforms to provide insights.
+        </p>
+
+        <h3>2. Explore Visualizations</h3>
+        <p>
+            Once the data is retrieved, explore the interactive visualizations on the "Secondary Skills" and "Jobs Posted by Month" graphs. Click on data points for more details.
+        </p>
+
+        <h3>3. Key Features</h3>
+        <ul>
+            <li><strong>Data Accuracy:</strong> The tool ensures accurate and up-to-date information by scraping multiple job platforms.</li>
+            <li><strong>User-Friendly Interface:</strong> Navigate through the tool effortlessly with its intuitive design.</li>
+            <li><strong>Insightful Visualizations:</strong> Gain insights into secondary skills and job posting trends through dynamic graphs.</li>
+        </ul>
+
+        <h3>4. Future Scope</h3>
+        <p>
+            The tool is continuously evolving. Expect future updates with enhanced features, additional data sources, and advanced analytics capabilities.
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2023 Job Market Analysis Tool
+    </footer>
+
+</body>
+</html>
