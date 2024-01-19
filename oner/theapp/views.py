@@ -7,8 +7,8 @@ from datetime import datetime
 import csv
 import pandas as pd
 from collections import Counter
-import folium
-import os
+# import folium
+# import os
 
 def get_page_source(url):
     try:
